@@ -57,7 +57,7 @@ static std::string check_format(std::string line) {
 void Phonebook::search_command() {
     if(size == 0)
     {
-        std::cout << "Phonebook empty, add contact";
+        std::cout << "Phonebook empty, add contact" << std::endl;
         return ;
     }
     std::cout << std::right;
@@ -72,4 +72,20 @@ void Phonebook::search_command() {
                 << std::setw(10) << check_format(list[i].get_last_name()) << "|"
                 << std::setw(10) << check_format(list[i].get_nickname()) << "|" << std::endl;
     }
+}
+
+int main() {
+    Phonebook inst;
+    std:: string cmd;
+
+    while(std::cout << "Enter command: ADD, SEARCH, EXIT: " && std::getline(std::cin, cmd))
+    {
+        if(cmd == "EXIT")
+            break;
+        else if(cmd == "ADD")
+            inst.add_command();
+        else if(cmd == "SEARCH")
+            inst.search_command();
+    }
+    return 0;
 }
