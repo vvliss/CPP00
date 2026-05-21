@@ -31,7 +31,8 @@ bool Contact::set_last_name(std::string str) {
     if(str.empty())
         return(false);
     this->last_name = str;
-    return(true);}
+    return(true);
+}
 
 bool Contact::set_nickname(std::string str) {
     if(str.empty())
